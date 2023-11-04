@@ -1,5 +1,7 @@
 package com.andersondev.desafiopicpaysimplificado.service;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 import com.andersondev.desafiopicpaysimplificado.dtos.UserDto;
@@ -32,6 +34,12 @@ public class UserService {
 		
 		return newuser;
 		
+	}
+
+
+	public List<User> listUsers() {
+		
+		return userRepository.findAll();
 	}
 
 }
