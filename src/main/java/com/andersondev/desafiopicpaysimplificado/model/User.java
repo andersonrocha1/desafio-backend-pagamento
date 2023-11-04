@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Objects;
 
+import com.andersondev.desafiopicpaysimplificado.dtos.UserDto;
 import com.andersondev.desafiopicpaysimplificado.enums.UserType;
 
 import jakarta.persistence.Column;
@@ -51,6 +52,17 @@ public class User implements Serializable {
 		this.password = password;
 		this.userType = userType;
 		this.balance = balance;
+	}
+	
+	public User(UserDto userDto) {
+		
+		this.nome = userDto.nome();
+		this.document = userDto.document();
+		this.email = userDto.email();
+		this.password = userDto.password();
+		this.userType = userDto.userType();
+		this.balance = userDto.balance();
+		
 	}
 
 	public Long getId() {
