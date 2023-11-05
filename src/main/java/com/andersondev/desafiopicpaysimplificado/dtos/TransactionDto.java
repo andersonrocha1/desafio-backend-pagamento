@@ -5,8 +5,8 @@ import java.math.BigDecimal;
 public record TransactionDto(
 		
 		BigDecimal amount,
-		Long payerid,
-		Long payeeid
+		Long payer_id,
+		Long payee_id
 		
 		) {
 	

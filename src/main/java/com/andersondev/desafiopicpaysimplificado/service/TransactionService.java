@@ -38,8 +38,8 @@ public class TransactionService {
 
 	public Transaction createTransaction(TransactionDto transactionDto) throws Exception {
 		
-		var payer = userService.findUserById(transactionDto.payerid());
-		var payee = userService.findUserById(transactionDto.payeeid());
+		var payer = userService.findUserById(transactionDto.payer_id());
+		var payee = userService.findUserById(transactionDto.payee_id());
 		
 		
 		userService.validaUser(payer, transactionDto.amount());
@@ -65,8 +65,8 @@ public class TransactionService {
 		userService.insertUser(payee);
 		
 		
-		notificationService.sendNotification(payer, "Transação realizada com sucesso!");
-		notificationService.sendNotification(payee, "Transação recebida com sucesso!");
+		notificationService.sendNotification(payer, " Transação realizada com sucesso!");
+		notificationService.sendNotification(payee, " Transação recebida com sucesso!");
 		
 		return transaction;
 	}

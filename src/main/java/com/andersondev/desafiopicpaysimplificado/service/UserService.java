@@ -60,7 +60,7 @@ public class UserService {
 			
 		} 
 		
-		if(payer.getBalance().compareTo(amount) < 0) {
+		else if(payer.getBalance().compareTo(amount) < 0) {
 			
 			throw new Exception("Saldo Insuficiente");
 			
